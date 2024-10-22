@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMemDatabase"));
-builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IRepository>(p =>
 {
     var context = p.GetService<AppDbContext>();
