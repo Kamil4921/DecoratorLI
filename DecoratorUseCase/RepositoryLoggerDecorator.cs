@@ -6,7 +6,7 @@ public class RepositoryLoggerDecorator(IRepository repository, ILogger<Repositor
     public override Task<Weather> GetById(int id)
     {
         var entity = base.GetById(id);
-        _logger.LogInformation($"Feched entity: {entity}");
+        _logger.LogInformation($"Fetched entity: {entity}");
         return entity;
     }
 }
